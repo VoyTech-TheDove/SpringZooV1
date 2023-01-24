@@ -7,6 +7,6 @@ import org.springframework.context.annotation.Configuration;
 public class ZooConfig {
     @Bean
     public Zoo zoo (){
-     return new Zoo("ExampleZoo", "Las Koviznas", AnimalRespositoryUtils.generateRandomAnimals());
+     return new Zoo("ExampleZoo", "Las Covidas", AnimalRespositoryUtils.generateRandomAnimals());
     }
 }
