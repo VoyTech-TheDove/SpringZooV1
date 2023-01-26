@@ -20,12 +20,15 @@ public class AnimalRandomizerUtils {
         return new Animal (id,species,name);
     }
     private static int getNextId(){
+
         return (int) COUNTER.incrementAndGet();
     }
     private static String getRandomName() {
+
         return NAMES[new Random().nextInt(NAMES.length)];
     }
     private static String getRandomSpecies() {
+
         return SPECIES[new Random().nextInt(SPECIES.length)];
     }
 
