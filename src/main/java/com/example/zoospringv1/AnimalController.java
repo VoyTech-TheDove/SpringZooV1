@@ -5,25 +5,26 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/animal")
+@RestController
+@RequestMapping("/animal")
 public class AnimalController {
     @Autowired
-    private AnimalService animalService;
+    Mapper mapper;
 
     @GetMapping
-    public List<Animal> get() {
-        return animalService.getAnimals();
+    public List<AnimalDTO> get() {
+        return mapper.getAnimalsDTO();
     }
 
     @GetMapping("/{id}")
-    public Animal get(@PathVariable("id") Integer id) {
-        return animalService.getAnimalById(id);
+    public AnimalDTO get(@PathVariable("id") Integer id) {
+        return mapper.getAnimalByIdDTO(id);
     }
 
     @PostMapping
-    public Animal add(
+    public AnimalDTO add(
             @RequestParam(value = "species", required = false) String species,
             @RequestParam(value = "name", required = false) String name) {
-        return animalService.addAnimalRequested(species, name);
+        return mapper.toAnimal(new AnimalDTO(species, name));
     }
 }

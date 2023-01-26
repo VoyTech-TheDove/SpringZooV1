@@ -5,40 +5,25 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 @Service
 public class AnimalService {
     private List<Animal> animals = new ArrayList<>();
+
     public List<Animal> getAnimals(){
         return animals;
     }
     public void addAnimalToList(Animal animal){
         getAnimals().add(animal);
     }
-    public Animal addAnimal (){
-        Animal animal = AnimalRandomizerUtils.createRandomAnimal();
-        addAnimalToList(animal);
-        return animal;
-    }
-    public Animal addAnimal (String species){
-        Animal animal = AnimalRandomizerUtils.createRandomSpecies(species);
-        addAnimalToList(animal);
-        return animal;
-    }
+
     public Animal addAnimal (String species,String name){
         Animal animal = AnimalRandomizerUtils.createAnimalSpeciesName(species, name);
         addAnimalToList(animal);
         return animal;
     }
     public Animal addAnimalRequested (String species, String name){
-        Animal animal;
-        if (species == null){
-            animal = addAnimal();
-        }else if (name == null){
-            animal = addAnimal(species);
-        } else {
-            animal = addAnimal(species, name);
-        }
-        return animal;
+        return addAnimal(species, name);
     }
 
     public List<Animal> generateRandomAnimals(){
@@ -56,6 +41,4 @@ public class AnimalService {
         }
     return null;
     }
-
-
 }
