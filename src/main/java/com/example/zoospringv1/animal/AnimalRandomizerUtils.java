@@ -1,4 +1,4 @@
-package com.example.zoospringv1;
+package com.example.zoospringv1.animal;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
@@ -16,11 +16,11 @@ public class AnimalRandomizerUtils {
         return new Animal(getNextId(), randomSpeciesIfNull(species), randomNameIfNull(name));
     }
 
-    public static String randomSpeciesIfNull(String species) {
+    private static String randomSpeciesIfNull(String species) {
         return (species == null) ? AnimalRandomizerUtils.getRandomSpecies() : species;
     }
 
-    public static String randomNameIfNull(String name) {
+    private static String randomNameIfNull(String name) {
         return (name == null) ? AnimalRandomizerUtils.getRandomName() : name;
     }
 
@@ -35,5 +35,4 @@ public class AnimalRandomizerUtils {
     private static String getRandomSpecies() {
         return SPECIES[new Random().nextInt(SPECIES.length)];
     }
-
 }
