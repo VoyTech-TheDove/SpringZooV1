@@ -1,6 +1,5 @@
 package com.example.zoospringv1.employee;
 
-import com.example.zoospringv1.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +9,7 @@ import java.util.List;
 @RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
-    Mapper mapper;
+    private EmployeeMapper mapper;
 
     @GetMapping
     public List<EmployeeDto> get() {
@@ -28,7 +27,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public void archive(@PathVariable("id") Integer id) {mapper.archiveEmployeeByIdDto(id);
+    public void archive(@PathVariable("id") Integer id) {
+        mapper.archiveEmployeeByIdDto(id);
     }
 
     @PostMapping

@@ -9,33 +9,39 @@ import java.util.Random;
 @Service
 public class AnimalService {
     private List<Animal> animals = new ArrayList<>();
-    public List<Animal> getAnimals(){
+
+    public List<Animal> getAnimals() {
         return animals;
     }
-    public List<Animal> generateRandomAnimals(){
-        int numAnimals = new Random().nextInt(15)+2;
-        for (int i=0; i<numAnimals; i++){
+
+    public List<Animal> generateRandomAnimals() {
+        int numAnimals = new Random().nextInt(15) + 2;
+        for (int i = 0; i < numAnimals; i++) {
             addAnimalToList(AnimalRandomizerUtils.createRandomAnimal());
         }
         return animals;
     }
-    private void addAnimalToList(Animal animal){
+
+    private void addAnimalToList(Animal animal) {
         getAnimals().add(animal);
     }
-    public Animal addAnimalRequested (String species, String name){
+
+    public Animal addAnimalRequested(String species, String name) {
         return addAnimal(species, name);
     }
-    private Animal addAnimal (String species,String name){
+
+    private Animal addAnimal(String species, String name) {
         Animal animal = AnimalRandomizerUtils.createAnimalSpeciesName(species, name);
         addAnimalToList(animal);
         return animal;
     }
-    public Animal getAnimalById (int id){
-        for (Animal a : animals){
+
+    public Animal getAnimalById(int id) {
+        for (Animal a : animals) {
             if (id == a.id()) {
                 return a;
             }
         }
-    return null;
+        return null;
     }
 }
