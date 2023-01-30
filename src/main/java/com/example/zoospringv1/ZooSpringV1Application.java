@@ -8,5 +8,4 @@ public class ZooSpringV1Application {
     public static void main(String[] args) {
         SpringApplication.run(ZooSpringV1Application.class, args);
     }
-
 }

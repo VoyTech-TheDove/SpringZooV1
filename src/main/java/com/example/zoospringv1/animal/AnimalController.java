@@ -1,5 +1,6 @@
-package com.example.zoospringv1;
+package com.example.zoospringv1.animal;
 
+import com.example.zoospringv1.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,22 +10,19 @@ import java.util.List;
 @RequestMapping("/animal")
 public class AnimalController {
     @Autowired
-    Mapper mapper;
-
+    private Mapper mapper;
     @GetMapping
-    public List<AnimalDTO> get() {
-        return mapper.getAnimalsDTO();
+    public List<AnimalDto> get() {
+        return mapper.getAnimalsDto();
     }
-
     @GetMapping("/{id}")
-    public AnimalDTO get(@PathVariable("id") Integer id) {
-        return mapper.getAnimalByIdDTO(id);
+    public AnimalDto get(@PathVariable("id") Integer id) {
+        return mapper.getAnimalByIdDto(id);
     }
-
     @PostMapping
-    public AnimalDTO add(
+    public AnimalDto add(
             @RequestParam(value = "species", required = false) String species,
             @RequestParam(value = "name", required = false) String name) {
-        return mapper.toAnimal(new AnimalDTO(species, name));
+        return mapper.toAnimal(new AnimalDto(species, name));
     }
 }
