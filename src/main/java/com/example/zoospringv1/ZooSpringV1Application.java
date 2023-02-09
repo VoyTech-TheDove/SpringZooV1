@@ -13,7 +13,7 @@ public class ZooSpringV1Application {
         Ticket ticketNormal = new Ticket(4, TicketType.ticketNormal, Currency.PLN);
         Ticket ticketReduced = new Ticket(4, TicketType.ticketReduced, Currency.PLN);
 
-        System.out.println("Sprzedano: " + ticketNormal.getNumberOfTickets() + " normal bilety.");
+        System.out.println("Sprzedano: " + ticketNormal.getNumberOfTickets() + " normalne bilety.");
         System.out.println("Sprzedano: " + ticketReduced.getNumberOfTickets() + " ulgowe bilety.");
         System.out.print("W sumie zakupiono: " + ((ticketNormal.getNumberOfTickets()) + (ticketReduced.getNumberOfTickets())) + " wszystkich biletów.");
     }
