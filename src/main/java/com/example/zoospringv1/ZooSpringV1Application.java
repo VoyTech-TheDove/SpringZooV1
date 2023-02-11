@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ZooSpringV1Application {
     public static void main(String[] args) {
+
         SpringApplication.run(ZooSpringV1Application.class, args);
+
         Ticket ticketNormal = new Ticket(4, TicketType.ticketNormal, Currency.PLN);
         Ticket ticketReduced = new Ticket(4, TicketType.ticketReduced, Currency.PLN);
 
