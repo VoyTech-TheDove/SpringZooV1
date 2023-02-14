@@ -17,6 +17,10 @@ public class ZooSpringV1Application {
 
         System.out.println("Sprzedano: " + ticketNormal.getNumberOfTickets() + " normalne bilety.");
         System.out.println("Sprzedano: " + ticketReduced.getNumberOfTickets() + " ulgowe bilety.");
-        System.out.print("W sumie zakupiono: " + ((ticketNormal.getNumberOfTickets()) + (ticketReduced.getNumberOfTickets())) + " wszystkich biletów.");
+        System.out.print("W sumie zakupiono: " + getSum(ticketNormal, ticketReduced) + " wszystkich biletów.");
+    }
+
+    private static int getSum(final Ticket ticketNormal, final Ticket ticketReduced) {
+        return (ticketNormal.getNumberOfTickets()) + (ticketReduced.getNumberOfTickets());
     }
 }
