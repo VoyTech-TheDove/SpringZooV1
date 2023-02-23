@@ -1,5 +1,7 @@
-package com.example.zoospringv1.animal;
+package com.example.zoospringv1.controller;
 
+import com.example.zoospringv1.animal.AnimalDto;
+import com.example.zoospringv1.animal.AnimalMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

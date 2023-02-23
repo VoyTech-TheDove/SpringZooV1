@@ -1,26 +1,22 @@
 package com.example.zoospringv1;
 
-import com.example.zoospringv1.ticketOffice.Currency;
-import com.example.zoospringv1.ticketOffice.Ticket;
-import com.example.zoospringv1.ticketOffice.TicketType;
+
+import com.example.zoospringv1.ticketApp.TicketApp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import static com.example.zoospringv1.ticketApp.PriceConstants.*;
+
 
 @SpringBootApplication
 public class ZooSpringV1Application {
     public static void main(String[] args) {
 
         SpringApplication.run(ZooSpringV1Application.class, args);
+        TicketApp ticketOffice = new TicketApp(NORMAL_T, 0, REDUCED_T, 0);
+        ticketOffice.choose();
 
-        Ticket ticketNormal = new Ticket(4, TicketType.ticketNormal, Currency.PLN);
-        Ticket ticketReduced = new Ticket(4, TicketType.ticketReduced, Currency.PLN);
-
-        System.out.println("Sprzedano: " + ticketNormal.getNumberOfTickets() + " normalne bilety.");
-        System.out.println("Sprzedano: " + ticketReduced.getNumberOfTickets() + " ulgowe bilety.");
-        System.out.print("W sumie zakupiono: " + getSum(ticketNormal, ticketReduced) + " wszystkich biletów.");
     }
 
-    private static int getSum(final Ticket ticketNormal, final Ticket ticketReduced) {
-        return (ticketNormal.getNumberOfTickets()) + (ticketReduced.getNumberOfTickets());
-    }
+
 }

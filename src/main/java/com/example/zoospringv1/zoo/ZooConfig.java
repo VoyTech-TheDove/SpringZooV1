@@ -1,6 +1,6 @@
-package com.example.zoospringv1;
+package com.example.zoospringv1.zoo;
 
-import com.example.zoospringv1.animal.AnimalService;
+import com.example.zoospringv1.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

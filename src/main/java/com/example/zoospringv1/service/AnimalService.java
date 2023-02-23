@@ -1,5 +1,7 @@
-package com.example.zoospringv1.animal;
+package com.example.zoospringv1.service;
 
+import com.example.zoospringv1.animal.Animal;
+import com.example.zoospringv1.animal.AnimalRandomizerUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.zoospringv1;
+package com.example.zoospringv1.zoo;
 
 import com.example.zoospringv1.animal.Animal;
 
