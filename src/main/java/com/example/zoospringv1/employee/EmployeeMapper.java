@@ -1,5 +1,6 @@
 package com.example.zoospringv1.employee;
 
+import com.example.zoospringv1.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

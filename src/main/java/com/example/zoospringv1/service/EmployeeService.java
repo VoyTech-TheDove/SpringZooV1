@@ -1,5 +1,6 @@
-package com.example.zoospringv1.employee;
+package com.example.zoospringv1.service;
 
+import com.example.zoospringv1.employee.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
